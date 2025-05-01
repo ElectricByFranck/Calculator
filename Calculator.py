@@ -1,0 +1,53 @@
+#THE PROGRAM IS A CALCULATOR WHICH CAN MAKE BASIC OPERATION SUCH AS ADDITION, SOUSTRACTION, DIVISION AND MULTIPLICATION
+
+#Addition
+def addition(user_input1, user_input2):
+    result_add = user_input1 + user_input2
+    return result_add
+
+#Soustraction
+def soustraction(user_input1, user_input2):
+    result_sous = user_input1 - user_input2
+    return result_sous
+
+#Multiplication
+def multiplication(user_input1, user_input2):
+    result_mult = user_input1 * user_input2
+    return result_mult
+
+#Division
+def division(user_input1, user_input2):
+    result_dis = user_input1 / user_input2
+    return result_dis
+
+while True: #Loop for continuosly ask the user input
+
+    #Showing the available choices
+    print("\nA.ENTER THE NUMBERS FOR YOUR OPERATION.\nB.CHOOSE THE OPERATION Please make a choose :\n\n1.Addition\n2.Soustraction\n3.Multiplication\n4.Division\n")
+
+    try:
+
+        #User inputs
+        user_input1 = int(input("Enter a number : ")) #Converting the user input to an integer
+        user_input2 = int(input("Enter a second number :"))
+        user_input = int(input("\nChoise an Operation :"))
+        print()
+
+        if user_input == 1: #Addition
+            result = addition(user_input1, user_input2)
+            print(f"The Operation: {user_input1} + {user_input2} = {result}")
+        elif user_input == 2: #Soustraction
+            result = soustraction(user_input1, user_input2)
+            print(f"The Operation: {user_input1} - {user_input2} = {result}")
+        elif user_input == 3:#Multiplication
+            result = multiplication(user_input1, user_input2)
+            print(f"The Operation: {user_input1} * {user_input2} = {result}")
+        elif user_input == 4:#Division
+            result = division(user_input1, user_input2)
+            print(f"The Operation: {user_input1} / {user_input2} = {result}")
+
+        else: #In the case the user enter a number out of the range(1,5)
+            print("Your choice are not valide !!")
+
+    except ValueError: #Handling the case the user enter a special characters ( )/,.
+        print("Invalide Value")
